@@ -72,3 +72,4 @@ wordlist = [["zeo","Zuo"]]
 queries = ["zeo"]
 print(spell_checker(wordlist, queries))
 
+'HELLO'
