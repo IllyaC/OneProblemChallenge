@@ -4,8 +4,8 @@ def insert(intervals, newInterval):
 
         index, final = 0, []
         current_start, current_end = newInterval
-        while index < n:
-            original_start, original_end = intervals[iterator_1]
+        while index < intervals.len():
+            original_start, original_end = intervals[index]
             
             #bigger
             if original_end < current_start:
