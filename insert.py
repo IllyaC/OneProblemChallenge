@@ -1,5 +1,5 @@
 def insert(intervals, newInterval):
-         if not intervals:
+        if not intervals:
             return [newInterval]
 
         index, final = 0, []
