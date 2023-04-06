@@ -10,17 +10,17 @@ O(n) time and without using the division operation.
 """
 
 def productExceptSelf(nums):
-    forwards = 1
-    backwards = 1   
-    multiplications = [1] * len(nums)
-    for i in  range(len(nums)):
-        multiplications[i] = forwards
-        forwards *= nums[i]
-    for j in  range(len(nums)-1, -1, -1):
-        multiplications[j] *= backwards
-        backwards *= nums[j]
-    
-    return multiplications
+        forwards_then_backwards = 1
+        multiplications = [1] * len(nums)
+        for i in  range(len(nums)):
+            multiplications[i] = forwards_then_backwards
+            forwards_then_backwards *= nums[i]
+        forwards_then_backwards = 1
+        for j in  range(len(nums)-1, -1, -1):
+            multiplications[j] *= forwards_then_backwards
+            forwards_then_backwards *= nums[j]
+
+        return multiplications
 
 nums = [-1,1,0,-3,3]
 print(productExceptSelf(nums))
